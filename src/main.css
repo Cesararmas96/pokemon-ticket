@@ -607,7 +607,7 @@ select {
   --tw-bg-opacity: 1;
   /* background-color: rgb(250 250 250 / var(--tw-bg-opacity)); */
   /* background-image: url("body_bg.png"); */
-  background-image: url("body_bg_light.gif");
+  background-image: url("./body_bg_light.gif");
   /* background-size: cover;
   background-repeat: no-repeat; */
   background-position: top left;
