@@ -605,7 +605,7 @@ select {
   body {
   overflow-x: hidden;
   --tw-bg-opacity: 1;
-  background-color: rgb(250 250 250 / var(--tw-bg-opacity));
+  /* background-color: rgb(250 250 250 / var(--tw-bg-opacity)); */
   /* background-image: url("body_bg.png"); */
   background-image: url("body_bg_light.gif");
   /* background-size: cover;
