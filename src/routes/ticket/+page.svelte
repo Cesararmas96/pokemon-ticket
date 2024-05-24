@@ -1,7 +1,6 @@
 <script lang="ts">
   import { onMount } from "svelte";
   import Orders from "$lib/components/form/Orders.svelte";
-  let requestType = "Other";
   let showAdditionalFields = false;
   import { Select, Label } from "flowbite-svelte";
   import Returns from "$lib/components/form/Returns.svelte";
@@ -11,9 +10,8 @@
   import Technical from "$lib/components/form/Technical.svelte";
   import Other from "$lib/components/form/Other.svelte";
   import Pikachu from "$lib/components/Pikachu.svelte";
-  let selectedType;
   let loading = false;
-
+  
   let request = [
     { value: "orders", name: "Orders" },
     { value: "returns", name: "Returns" },
@@ -23,23 +21,19 @@
     { value: "technical", name: "Technical Issue" },
     { value: "other", name: "Other" },
   ];
-
-  let selected = "-";
+  
+  let requestType = "other";
+  let selected = "other";
   function handleRequestTypeChange(event) {
     loading = true;
     requestType = event.target.value;
-    // Mostrar campos adicionales solo si requestType no es 'Other'
-    showAdditionalFields = requestType !== "other";
 
     setTimeout(() => {
       loading = false;
     }, 400); // Adjust the delay as needed
   }
 
-  // Inicializar el estado del formulario
-  onMount(() => {
-    showAdditionalFields = requestType !== "other";
-  });
+  
 </script>
 
 <section class="section pt-0">
@@ -70,6 +64,7 @@
                       items={request}
                       bind:value={selected}
                       on:change={handleRequestTypeChange}
+                      
                     />
                   </Label>
                 </div>
