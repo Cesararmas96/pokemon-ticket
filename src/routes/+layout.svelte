@@ -1,5 +1,8 @@
 <script lang="ts">
+    import Footer from '$lib/components/Footer.svelte'
+    import Header from '$lib/components/Header.svelte'
     import "../app.css";
+    import "../main.css";
 
     let isPageLoaded = false;
     const pageLoaded = () => {
@@ -9,12 +12,24 @@
 
 {#if !isPageLoaded}
 <div    use:pageLoaded class="z-10 flex h-screen w-screen items-center justify-center overflow-hidden">
-  <div class="h-16 w-16 animate-spin rounded-full border-4 border-dashed border-blue-400" />
+  <div class="sm:col-span-12 flex justify-center">
+    <img
+      class="animate-spin w-[100px]"
+      src="poke-boll.png"
+      alt="Loading"
+    />
+  </div>
 </div>
   
 {:else}
-<div class="m-5">
+<Header/>
+<section class="section m-5 p-8  bg-white rounded-xl">
 
   <slot />
-</div>
-{/if}
+
+
+  
+  
+</section>
+<Footer/>
+{/if} 
